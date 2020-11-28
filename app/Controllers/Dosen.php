@@ -1,19 +1,17 @@
 <?php namespace App\Controllers;
 use CodeIgniter\RESTful\ResourceController;
-use App\Models\DosenModel;
 
 class Dosen extends ResourceController
 {
-	protected $modelName;
+	protected $modelName = 'App\Models\DosenModel';
     protected $format = 'json';
  
     public function index(){
-        $this->modelName = new DosenModel();
 
         return $this->respond([
             'statusCode' => 200,
             'message'    => 'OK',
-            'data'       => $this->modelName->getDataDosen()
+            'data'       => $this->model->findAll()
         ], 200);
     }
  

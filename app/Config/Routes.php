@@ -1,5 +1,7 @@
 <?php namespace Config;
 
+use App\Controllers\GetAllCustomUsers;
+
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
 
@@ -39,6 +41,9 @@ $routes->resource('api/jadwalkuliah', ['controller' => 'Jadwalkuliah']);
 $routes->resource('api/daftarmk', ['controller' => 'Daftarmk']);
 $routes->resource('api/absen', ['controller' => 'Absen']);
 $routes->post('/api/login', 'users::checkLogin');
+
+$routes->get('/api/getDataDosen', 'GetAllCustomUsers::getDataDosen');
+
 /**
  * --------------------------------------------------------------------
  * Additional Routing

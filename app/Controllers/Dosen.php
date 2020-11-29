@@ -72,8 +72,8 @@ class Dosen extends ResourceController
                 $json = $this->request->getJSON();
                 
                 $post->update($json->id, [
-                    'title'     => $json->title,
-                    'content'   => $json->content
+                    'nama'     => $json->nama,
+                    'alamat'   => $json->alamat
                 ]);
  
             } else {

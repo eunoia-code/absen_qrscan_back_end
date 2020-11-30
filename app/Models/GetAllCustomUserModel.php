@@ -7,7 +7,6 @@ class GetAllCustomUserModel extends Model
     public function getDataDosen(){
         return $this->db->table('user')
             ->join('dosen', 'user.id_user = dosen.id_user')
-            ->where('user.level = 1')
             ->get()->getResultArray();
     }
 }

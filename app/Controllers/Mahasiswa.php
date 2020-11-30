@@ -1,5 +1,6 @@
 <?php namespace App\Controllers;
 use CodeIgniter\RESTful\ResourceController;
+
 class Mahasiswa extends ResourceController
 {
 	protected $modelName = 'App\Models\MahasiswaModel';
@@ -9,7 +10,7 @@ class Mahasiswa extends ResourceController
         return $this->respond([
             'statusCode' => 200,
             'message'    => 'OK',
-            'data'       => $this->model->orderBy('id_mahasiswa', 'DESC')->findAll()
+            'data'       => $this->model->getDataMahasiswa()
         ], 200);
     }
  
@@ -74,8 +75,10 @@ class Mahasiswa extends ResourceController
                 $json = $this->request->getJSON();
                 
                 $post->update($json->id, [
-                    'title'     => $json->title,
-                    'content'   => $json->content
+                    'nama'     => $json->nama,
+                    'nim'   => $json->nim,
+                    'alamat'   => $json->alamat,
+                    'angkatan'   => $json->angkatan
                 ]);
  
             } else {

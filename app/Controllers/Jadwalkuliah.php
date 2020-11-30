@@ -9,7 +9,7 @@ class Jadwalkuliah extends ResourceController
         return $this->respond([
             'statusCode' => 200,
             'message'    => 'OK',
-            'data'       => $this->model->orderBy('id_jadwal', 'DESC')->findAll()
+            'data'       => $this->model->getDataJadwal()
         ], 200);
     }
  
@@ -72,8 +72,9 @@ class Jadwalkuliah extends ResourceController
                 $json = $this->request->getJSON();
                 
                 $post->update($json->id, [
-                    'title'     => $json->title,
-                    'content'   => $json->content
+                    'id_user'     => $json->id_user,
+                    'tgl_jadwal'   => $json->tgl_jadwal,
+                    'waktu_jadwal'   => $json->waktu_jadwal
                 ]);
  
             } else {

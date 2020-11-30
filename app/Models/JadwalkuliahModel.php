@@ -14,8 +14,10 @@ class JadwalkuliahModel extends Model
         'waktu_jadwal'
     ];
  
-    public function checkLogin($username, $password) {
-        $query = $this->db->table('user')->where(['username' => $username, 'password' => $password]);
-        return $query->countAllResults();
+    public function getDataJadwal(){
+        return $this->db->table('jadwalkuliah')
+            ->join('matakuliah', 'jadwalkuliah.id_mk = matakuliah.id_mk')
+            ->join('dosen', 'jadwalkuliah.id_user = dosen.id_user')
+            ->get()->getResultArray();
     }
 }

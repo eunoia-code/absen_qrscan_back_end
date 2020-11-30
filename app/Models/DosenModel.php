@@ -12,7 +12,7 @@ class DosenModel extends Model
         'nama',
         'alamat'
     ];
- 
+    
     public function getDataDosen(){
         return $this->db->table('user')
             ->join('dosen', 'user.id_user = dosen.id_user')

@@ -9,7 +9,7 @@ class Matakuliah extends ResourceController
         return $this->respond([
             'statusCode' => 200,
             'message'    => 'OK',
-            'data'       => $this->model->orderBy('id_mk', 'DESC')->findAll()
+            'data'       => $this->model->findAll()
         ], 200);
     }
  
@@ -66,8 +66,7 @@ class Matakuliah extends ResourceController
                 $json = $this->request->getJSON();
                 
                 $post->update($json->id, [
-                    'title'     => $json->title,
-                    'content'   => $json->content
+                    'nama_mk'     => $json->nama_mk
                 ]);
  
             } else {

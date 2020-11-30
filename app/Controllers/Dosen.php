@@ -11,7 +11,8 @@ class Dosen extends ResourceController
         return $this->respond([
             'statusCode' => 200,
             'message'    => 'OK',
-            'data'       => $this->model->findAll()
+            // 'data'       => $this->model->findAll()
+            'data'       => $this->model->getDataDosen()
         ], 200);
     }
  
@@ -72,8 +73,8 @@ class Dosen extends ResourceController
                 $json = $this->request->getJSON();
                 
                 $post->update($json->id, [
-                    'title'     => $json->title,
-                    'content'   => $json->content
+                    'nama'     => $json->nama,
+                    'alamat'   => $json->alamat
                 ]);
  
             } else {

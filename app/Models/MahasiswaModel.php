@@ -15,8 +15,9 @@ class MahasiswaModel extends Model
         'angkatan'
     ];
  
-    public function checkLogin($username, $password) {
-        $query = $this->db->table('user')->where(['username' => $username, 'password' => $password]);
-        return $query->countAllResults();
+    public function getDataMahasiswa(){
+        return $this->db->table('user')
+            ->join('mahasiswa', 'user.id_user = mahasiswa.id_user')
+            ->get()->getResultArray();
     }
 }

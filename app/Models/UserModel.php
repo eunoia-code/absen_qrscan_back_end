@@ -17,5 +17,4 @@ class UserModel extends Model
         $query = $this->db->table('user')->where(['username' => $username, 'password' => $password]);
         return $query->countAllResults();
     }
-
 }

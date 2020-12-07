@@ -35,12 +35,15 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->resource('api/users', ['controller' => 'Users']);
 $routes->resource('api/dosen', ['controller' => 'Dosen']);
+$routes->post('api/showdosen', 'ShowDosen::showDosen');
 $routes->resource('api/mahasiswa', ['controller' => 'Mahasiswa']);
+$routes->post('api/showmahasiswa', 'ShowMahasiswa::showMahasiswa');
 $routes->resource('api/matakuliah', ['controller' => 'Matakuliah']);
 $routes->resource('api/jadwalkuliah', ['controller' => 'Jadwalkuliah']);
 $routes->resource('api/daftarmk', ['controller' => 'Daftarmk']);
 $routes->resource('api/absen', ['controller' => 'Absen']);
-$routes->post('/api/login', 'users::checkLogin');
+$routes->post('api/login', 'Login::checkLogin');
+// $routes->resource('api/login', ['controller' => 'Login']);
 
 $routes->get('/api/getDataDosen', 'GetAllCustomUsers::getDataDosen');
 

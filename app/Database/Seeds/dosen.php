@@ -8,9 +8,9 @@ class Dosen extends Seeder
 	{
 		$data = [
 				'id_dosen'	=> uniqid(),
-				'id_user' => '5fc11c10ddf2',
-				'nama'    => 'amboako',
-				'alamat'	=> 'besulutu'
+				'id_user' => '1c2oi3nucoie',
+				'nama'    => 'Super Admin',
+				'alamat'	=> 'Super Admin'
 		];
 
 		// Using Query Builder

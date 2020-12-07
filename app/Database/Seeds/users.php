@@ -7,9 +7,9 @@ class Users extends Seeder
 	public function run()
 	{
 		$data = [
-				'id_user'	=> uniqid(),
-				'username' => 'dosen',
-				'password'    => sha1(md5('admin123')),
+				'id_user'	=> '1c2oi3nucoie',
+				'username' => 'admin',
+				'password'    => sha1(md5('admin')),
 				'level'		=> 1
 		];
 

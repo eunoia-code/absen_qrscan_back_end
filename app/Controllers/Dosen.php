@@ -21,7 +21,7 @@ class Dosen extends ResourceController
         return $this->respond([
             'statusCode' => 200,
             'message'    => 'OK',
-            'data'       => $this->model->find($id)
+            'data'       => $this->model->showDataDosen($id)
         ], 200);
     }
  

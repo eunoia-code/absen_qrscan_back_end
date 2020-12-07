@@ -16,6 +16,11 @@ class DosenModel extends Model
     public function getDataDosen(){
         return $this->db->table('user')
             ->join('dosen', 'user.id_user = dosen.id_user')
-            ->get()->getResultArray();
+            ->getWhere('level!=0')->getResultArray();
+    }
+
+    public function showDataDosen($id){
+        return $this->db->table('user')
+            ->join('dosen', 'user.id_user = dosen.id_user')->getWhere(['user.id_user' => $id])->getResult();
     }
 }

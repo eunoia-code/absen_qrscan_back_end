@@ -17,6 +17,7 @@ class DosenModel extends Model
         return $this->db->table('user')
             ->join('dosen', 'user.id_user = dosen.id_user')
             ->getWhere('level!=0')->getResultArray();
+        // return "invalid";
     }
 
     public function showDataDosen($id){

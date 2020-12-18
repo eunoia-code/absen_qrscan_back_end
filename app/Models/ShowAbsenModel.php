@@ -2,7 +2,7 @@
   
 use CodeIgniter\Model;
   
-class AbsenModel extends Model
+class ShowAbsenModel extends Model
 {
     protected $table = "absen";
     protected $primaryKey = 'id_absen';
@@ -12,18 +12,13 @@ class AbsenModel extends Model
         'id_user',
         'waktu'
     ];
-
-    public function getAbsen() {
+    
+    public function showDataAbsen($id){
         return $this->db->table('absen')
-            ->join('mahasiswa', 'absen.id_user = mahasiswa.id_user')
+            ->join('mahasiswa', 'mahasiswa.id_user = absen.id_user')
             ->join('jadwalkuliah', 'absen.id_jadwal = jadwalkuliah.id_jadwal')
             ->join('matakuliah', 'jadwalkuliah.id_mk = matakuliah.id_mk')
-            ->get()->getResultArray();
-        // return "invalid";
-    }
- 
-    public function checkLogin($username, $password) {
-        $query = $this->db->table('user')->where(['username' => $username, 'password' => $password]);
-        return $query->countAllResults();
+            ->getWhere(['absen.id_user'=>$id])->getResultArray();
+        // return $id;
     }
 }

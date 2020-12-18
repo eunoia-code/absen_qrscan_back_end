@@ -9,7 +9,7 @@ class Absen extends ResourceController
         return $this->respond([
             'statusCode' => 200,
             'message'    => 'OK',
-            'data'       => $this->model->orderBy('id_absen', 'DESC')->findAll()
+            'data'       => $this->model->getAbsen()
         ], 200);
     }
  

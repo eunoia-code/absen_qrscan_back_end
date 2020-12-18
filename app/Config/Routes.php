@@ -42,7 +42,10 @@ $routes->resource('api/matakuliah', ['controller' => 'Matakuliah']);
 $routes->resource('api/jadwalkuliah', ['controller' => 'Jadwalkuliah']);
 $routes->resource('api/daftarmk', ['controller' => 'Daftarmk']);
 $routes->resource('api/absen', ['controller' => 'Absen']);
+$routes->post('api/showdaftarmk', 'Showdaftarmk::showMk');
+$routes->post('api/showabsen', 'ShowAbsen::showAbsen');
 $routes->post('api/login', 'Login::checkLogin');
+$routes->post('api/rc4', 'RC4::start');
 // $routes->resource('api/login', ['controller' => 'Login']);
 
 $routes->get('/api/getDataDosen', 'GetAllCustomUsers::getDataDosen');
